@@ -1,0 +1,23 @@
+ {% load static %}
+<html>
+
+<body bgcolor="#ffaeb9">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+<body>
+
+<center><h1> 재희의 블로그! </h1></center>
+    <a href="{% url 'new' %}"><div style="color:blue; text-align:right;"> 글쓰기 </div></a>
+{% for blog in blogs.all %}
+        <h1>{{  blog.title  }}</h1>
+        <p>{{  blog.pub_date  }}</p>
+        <p>{{ blog.summary }}</p>
+
+<a href="{% url 'detail' blog.id%}"><div style="color:blue;">more....</div></a>
+
+
+    {%endfor%}
+</body>
+
+</html>

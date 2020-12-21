@@ -1,0 +1,16 @@
+ {% load static %}
+<html>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h1> 신나게 글을 써봅시당</h1>
+<form action="{% url 'create' %}">
+  <h4>제목: </h4>
+  <input type="text" name="title">
+  <br>
+  <br>
+  <h4>본문: </h4>
+  <textarea cols=40 rows=10 name="body"></textarea>
+  <br>
+  <br>
+  <input class="btn btn-dark" type="submit" value="제출하기">
+</form>
+</html>
